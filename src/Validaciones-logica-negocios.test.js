@@ -89,3 +89,9 @@ describe("Gestor Tareas Validaciones Verificar Categoría", () => {
         clearArray(listas.getListaCategorias());
     });
 });
+
+describe("Gestor Tareas Validaciones Verificar Fecha Límite", () => {
+    it("Debería devolver la fecha ingresada cuando la fecha es >= a la fecha actual", () => {
+        expect(validaciones.validarFechaLimite('2022-10-28')).toEqual('2022-10-28');
+    });
+});
