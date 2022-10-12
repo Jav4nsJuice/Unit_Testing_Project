@@ -58,5 +58,8 @@ describe("Gestor Tareas", () => {
         expect(gestor.asignarEtiquetaATarea(Tarea,"")).toEqual(
             "No se creo la tarea. ETIQUETA INVALIDA");
     });
-
+    it("Deberia devolver el titulo de la tarea con la categoria", () => {
+        expect(gestor.crearTareaConCategoria("Tarea individual","Personal","")).toEqual(
+            "Tarea individual\nCategoria: Personal");
+    });
 });
