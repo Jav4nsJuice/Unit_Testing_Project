@@ -50,6 +50,13 @@ describe("Gestor Tareas", () => {
         expect(gestor.asignarFechaLimiteATarea(Tarea,"2022-01-01")).toEqual(
             "No se creo la tarea. FECHA LIMITE INVALIDA");
     });
-
+    it("Deberia devolver tarea con etiqueta asignada", () => {
+        expect(gestor.asignarEtiquetaATarea(Tarea,"Diario")).toEqual(
+            Tarea);
+    });
+    it("Deberia devolver etiqueta invalida", () => {
+        expect(gestor.asignarEtiquetaATarea(Tarea,"")).toEqual(
+            "No se creo la tarea. ETIQUETA INVALIDA");
+    });
 
 });
