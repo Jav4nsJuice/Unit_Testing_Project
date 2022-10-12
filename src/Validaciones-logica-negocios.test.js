@@ -82,4 +82,10 @@ describe("Gestor Tareas Validaciones Verificar Categoría", () => {
         expect(validaciones.buscarCategoria('personal')).toEqual(false);
         expect(listas.getListaCategorias().length).toEqual(0);
     });
+
+    it("Debería devolver false cuando se quiera verificar una categoría que no se encuentre en la lista de Categorías", () => {
+        listas.getListaCategorias().push('','trabajo','personal','familia','otros');
+        expect(validaciones.buscarCategoria('recordatorios')).toEqual(false);
+        clearArray(listas.getListaCategorias());
+    });
 });
