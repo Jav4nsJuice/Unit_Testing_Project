@@ -10,11 +10,11 @@ describe("Gestor Tareas Validaciones", () => {
         expect(validaciones.verificarCampoVacio("")).toEqual("n/a");
     });
 
-    /*it("Debería devolver n/a cuando un campo se envía vacío pero con espacios", () => {
+    it("Debería devolver n/a cuando un campo se envía vacío pero con espacios", () => {
         expect(validaciones.verificarCampoVacio(" ")).toEqual("n/a");
-    });*/
+    });
 
     it("Debería devolver n/a cuando un campo se envía con cualquier caracter", () => {
-        expect(validaciones.verificarCampoVacio("Hola")).toEqual("Hola");
+        expect(validaciones.verificarCampoVacio("Tarea")).toEqual("Tarea");
     });
 });
