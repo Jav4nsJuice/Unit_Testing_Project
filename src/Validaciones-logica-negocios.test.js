@@ -47,4 +47,9 @@ describe("Gestor Tareas Validaciones Buscar Categoría", () => {
         expect(validaciones.buscarCategoria('personal')).toEqual(true);
         clearArray(listas.getListaCategorias());
     });
+
+    it("Debería devolver false cuando la lista de categorías se encuentre vacía", () => {
+        expect(validaciones.buscarCategoria('personal')).toEqual(false);
+        expect(listas.getListaCategorias().length).toEqual(0);
+    });
 });
