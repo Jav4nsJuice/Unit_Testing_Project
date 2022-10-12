@@ -64,4 +64,8 @@ describe("Gestor Tareas Validaciones Verificar Descripción", () => {
     it("Debería devolver n/a cuando la descripción se envía vacía", () => {
         expect(validaciones.verificarDescripcion("")).toEqual("n/a");
     });
+
+    it("Debería devolver la descripción ingresada cuando un campo se envía con cualquier caracter", () => {
+        expect(validaciones.verificarDescripcion("Tarea de Matemáticas de la Fotocopia")).toEqual("Tarea de Matemáticas de la Fotocopia");
+    });
 });
