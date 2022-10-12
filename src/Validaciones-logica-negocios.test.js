@@ -109,4 +109,8 @@ describe("Gestor Tareas Validaciones Verificar Fecha", () => {
     it("Debería devolver la fecha ingresada cuando la fecha es >= a la fecha actual", () => {
         expect(validaciones.validarFecha('2022-10-28')).toEqual('2022-10-28');
     });
+
+    it("Debería devolver Ilimitado cuando el campo de fecha es vacío", () => {
+        expect(validaciones.validarFecha('')).toEqual('Ilimitado');
+    });
 });
