@@ -34,4 +34,14 @@ describe("Gestor Tareas", () => {
             "Don Quijote");
     });
 
+    it("Deberia devolver la tarea con el titulo y la fecha limite dada", () => {
+        expect(gestor.crearTareaConFechaLimite("Don Quijote","2022-12-25","")).toEqual(
+            "Don Quijote\nFecha Limite: 2022-12-25");
+    });
+    it("Deberia devolver fecha invalida", () => {
+        expect(gestor.crearTareaConFechaLimite("Don Quijote","2020-12-25","")).toEqual(
+            "No se pudo crear la tarea, FECHA INVALIDA.");
+    });
+
+
 });
