@@ -113,4 +113,9 @@ describe("Gestor Tareas Validaciones Verificar Fecha", () => {
     it("Debería devolver Ilimitado cuando el campo de fecha es vacío", () => {
         expect(validaciones.validarFecha('')).toEqual('Ilimitado');
     });
+
+    it("Debería devolver false cuando el campo de fecha es menor a la fecha actual", () => {
+        expect(validaciones.validarFecha('2022-10-12')).toEqual('2022-10-12');
+        expect(validaciones.validarFecha('2022-10-11')).toEqual(false);
+    });
 });
