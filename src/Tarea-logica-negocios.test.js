@@ -19,9 +19,19 @@ describe("Gestor Tareas", () => {
             Tarea);
     });
 
-    it("Deberia devolver el titulo", () => {
+    it("Deberia devolver categoría invalida", () => {
         expect(gestor.asignarCategoriaATarea(Tarea, "")).toEqual(
             "No se creo la tarea. CATEGORIA INVALIDA");
+    });
+
+    it("Deberia devolver título inválido", () => {
+        expect(gestor.crearTareaConTitulo("","")).toEqual(
+            "No se creo la tarea. TITULO INVALIDO");
+    });
+
+    it("Deberia devolver la tarea con el título enviado", () => {
+        expect(gestor.crearTareaConTitulo("Don Quijote","")).toEqual(
+            "Don Quijote");
     });
 
 });
