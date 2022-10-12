@@ -18,6 +18,12 @@ describe("Gestor Tareas", () => {
         expect(gestor.asignarDescipcionATarea(Tarea, "")).toEqual(
             Tarea);
     });
+    it("Deberia inicializar las listas", () => {
+        const expected = ['','trabajo','personal','familia','otros'];
+        const lists = listas.getListaCategorias();
+        expect(gestor.inicializarListas()).toEqual(
+            expect.arrayContaining(expected));
+    }); //Inicializar las listas se hara cuando se hagan las pruebas de la lista logica
 
     it("Deberia devolver categoría invalida", () => {
         expect(gestor.asignarCategoriaATarea(Tarea, "")).toEqual(
