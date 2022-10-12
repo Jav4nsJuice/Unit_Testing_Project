@@ -22,7 +22,7 @@ describe("Gestor Tareas Validaciones", () => {
     //     expect(validaciones.verificarCampoVacio(" ")).toEqual("n/a");
     // });
 
-    it("Debería devolver n/a cuando un campo se envía con cualquier caracter", () => {
+    it("Debería devolver el campo ingresado cuando un campo se envía con cualquier caracter", () => {
         expect(validaciones.verificarCampoVacio("Tarea")).toEqual("Tarea");
     });
 });
@@ -57,5 +57,11 @@ describe("Gestor Tareas Validaciones Buscar Categoría", () => {
         listas.getListaCategorias().push('','trabajo','personal','familia','otros');
         expect(validaciones.buscarCategoria('recordatorios')).toEqual(false);
         clearArray(listas.getListaCategorias());
+    });
+});
+
+describe("Gestor Tareas Validaciones Verificar Descripción", () => {
+    it("Debería devolver n/a cuando la descripción se envía vacía", () => {
+        expect(validaciones.verificarDescripcion("")).toEqual("n/a");
     });
 });
