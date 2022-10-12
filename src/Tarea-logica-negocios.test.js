@@ -70,4 +70,12 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaConDescripcion("Tarea personal","Debe ser realizada mañana","")).toEqual(
             "Tarea personal\nDescripcion: Debe ser realizada mañana");
     });
+    it("Deberia devolver etiqueta inválida", () => {
+        expect(gestor.crearTareaConEtiqueta("Tarea personal","","")).toEqual(
+            "No se creo la tarea. ETIQUETA INVALIDA");
+    });
+    it("Deberia devolver la tarea con la etiqueta asignada", () => {
+        expect(gestor.crearTareaConEtiqueta("Tarea personal","personal","")).toEqual(
+            "Tarea personal\nEtiquetas: personal");
+    });
 });
