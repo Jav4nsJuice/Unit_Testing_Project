@@ -14,6 +14,10 @@ describe("Gestor Tareas", () => {
         expect(gestor.asignarTituloATarea(Tarea, "")).toEqual(
             "No se creo la tarea. TITULO INVALIDO");
     });
+    it("Deberia devolver tarea con la descripcion agregada", () => {
+        expect(gestor.asignarDescipcionATarea(Tarea, "")).toEqual(
+            Tarea);
+    });
 
     it("Deberia devolver el titulo", () => {
         expect(gestor.asignarCategoriaATarea(Tarea, "")).toEqual(
