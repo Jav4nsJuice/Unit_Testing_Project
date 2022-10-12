@@ -71,10 +71,15 @@ describe("Gestor Tareas Validaciones Verificar Descripción", () => {
 });
 
 describe("Gestor Tareas Validaciones Verificar Categoría", () => {
-    it("Debería devolver n/a cuando la descripción se envía vacía", () => {
+    it("Debería devolver true cuando la categoría se encuentra en la lista de Categorías", () => {
         listas.getListaCategorias().push('','trabajo','personal','familia','otros');
         expect(validaciones.validarCategoria('trabajo')).toEqual(true);
         clearArray(listas.getListaCategorias());
+        expect(listas.getListaCategorias().length).toEqual(0);
+    });
+
+    it("Debería devolver false cuando se trate de verificar una categoria y la lista de categorías se encuentre vacía", () => {
+        expect(validaciones.buscarCategoria('personal')).toEqual(false);
         expect(listas.getListaCategorias().length).toEqual(0);
     });
 });
