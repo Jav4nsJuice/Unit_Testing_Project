@@ -42,6 +42,14 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaConFechaLimite("Don Quijote","2020-12-25","")).toEqual(
             "No se pudo crear la tarea, FECHA INVALIDA.");
     });
+    it("Deberia devolver tarea con fecha limite asignada", () => {
+        expect(gestor.asignarFechaLimiteATarea(Tarea,"2022-12-25")).toEqual(
+            Tarea);
+    });
+    it("Deberia devolver fecha limite invalida al asignarlo a una tarea ", () => {
+        expect(gestor.asignarFechaLimiteATarea(Tarea,"2022-01-01")).toEqual(
+            "No se creo la tarea. FECHA LIMITE INVALIDA");
+    });
 
 
 });
