@@ -18,3 +18,17 @@ describe("Gestor Tareas Validaciones", () => {
         expect(validaciones.verificarCampoVacio("Tarea")).toEqual("Tarea");
     });
 });
+
+describe("Gestor Tareas Validaciones Título", () => {
+    it("Debería devolver false cuando un título se envía vacío", () => {
+        expect(validaciones.validarTitulo("")).toEqual(false);
+    });
+
+    it("Debería devolver false cuando un título se envía vacío con espacios", () => {
+        expect(validaciones.validarTitulo(" ")).toEqual(false);
+    });
+
+    it("Debería devolver true cuando un título se envía correctamente", () => {
+        expect(validaciones.validarTitulo("Tarea 1")).toEqual(true);
+    });
+});
