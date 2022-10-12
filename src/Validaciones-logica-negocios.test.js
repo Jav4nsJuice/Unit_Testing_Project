@@ -89,3 +89,33 @@ describe("Gestor Tareas Validaciones Verificar Categoría", () => {
         clearArray(listas.getListaCategorias());
     });
 });
+
+describe("Gestor Tareas Validaciones Verificar Fecha Límite", () => {
+    it("Debería devolver la fecha ingresada cuando la fecha es >= a la fecha actual", () => {
+        expect(validaciones.validarFechaLimite('2022-10-28')).toEqual('2022-10-28');
+    });
+
+    it("Debería devolver Ilimitado cuando el campo de fecha es vacío", () => {
+        expect(validaciones.validarFechaLimite('')).toEqual('Ilimitado');
+    });
+
+    it("Debería devolver false cuando el campo de fecha es menor a la fecha actual", () => {
+        expect(validaciones.validarFechaLimite('2022-10-12')).toEqual('2022-10-12');
+        expect(validaciones.validarFechaLimite('2022-10-11')).toEqual('No se pudo crear la tarea, FECHA INVALIDA.');
+    });
+});
+
+describe("Gestor Tareas Validaciones Verificar Fecha", () => {
+    it("Debería devolver la fecha ingresada cuando la fecha es >= a la fecha actual", () => {
+        expect(validaciones.validarFecha('2022-10-28')).toEqual('2022-10-28');
+    });
+
+    it("Debería devolver Ilimitado cuando el campo de fecha es vacío", () => {
+        expect(validaciones.validarFecha('')).toEqual('Ilimitado');
+    });
+
+    it("Debería devolver false cuando el campo de fecha es menor a la fecha actual", () => {
+        expect(validaciones.validarFecha('2022-10-12')).toEqual('2022-10-12');
+        expect(validaciones.validarFecha('2022-10-11')).toEqual(false);
+    });
+});
