@@ -62,4 +62,12 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaConCategoria("Tarea individual","Personal","")).toEqual(
             "Tarea individual\nCategoria: Personal");
     });
+    it("Deberia devolver descripción inválida", () => {
+        expect(gestor.crearTareaConDescripcion("","","")).toEqual(
+            "No se creo la tarea. DESCRIPCION INVALIDA");
+    });
+    it("Deberia devolver el título de la tarea con la descripción", () => {
+        expect(gestor.crearTareaConDescripcion("Tarea personal","Debe ser realizada mañana","")).toEqual(
+            "Tarea personal\nDescripcion: Debe ser realizada mañana");
+    });
 });
