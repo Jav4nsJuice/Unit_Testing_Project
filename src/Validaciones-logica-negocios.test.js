@@ -69,3 +69,12 @@ describe("Gestor Tareas Validaciones Verificar Descripción", () => {
         expect(validaciones.verificarDescripcion("Tarea de Matemáticas de la Fotocopia")).toEqual("Tarea de Matemáticas de la Fotocopia");
     });
 });
+
+describe("Gestor Tareas Validaciones Verificar Categoría", () => {
+    it("Debería devolver n/a cuando la descripción se envía vacía", () => {
+        listas.getListaCategorias().push('','trabajo','personal','familia','otros');
+        expect(validaciones.validarCategoria('trabajo')).toEqual(true);
+        clearArray(listas.getListaCategorias());
+        expect(listas.getListaCategorias().length).toEqual(0);
+    });
+});
