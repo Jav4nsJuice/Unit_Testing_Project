@@ -6,7 +6,14 @@ import { Tarea } from './Tarea-logica-negocios.js';
 
 describe("Gestor Tareas", () => {
 
-    // Asignar Titulo a una Tarea
+    it("Deberia devolver la tarea con el titulo", () => {
+        expect(gestor.asignarTituloATarea(Tarea, "Titulo")).toEqual(
+            Tarea);
+    });
+    it("Deberia devolver mensaje de titulo invalido", () => {
+        expect(gestor.asignarTituloATarea(Tarea, "")).toEqual(
+            "No se creo la tarea. TITULO INVALIDO");
+    });
 
     it("Deberia devolver el titulo", () => {
         expect(gestor.asignarCategoriaATarea(Tarea, "")).toEqual(
