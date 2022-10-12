@@ -86,4 +86,12 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaCompleta("Tarea personal","revisar la lista mañana","2022-12-25","personal","importante","completada")).toEqual(
             "Tarea personal\nDescripcion: revisar la lista mañana\nFecha Limite: 2022-12-25\nCategoria: personal\nEtiquetas: importante\nCompletada: completada");
     });
+    it("Deberia devolver titulo invalido de la tarea completa T", () => {
+        expect(gestor.crearTareaCompletaT("","","","","","")).toEqual(
+            "No se creo la tarea. TITULO INVALIDO");
+    });
+    it("Deberia devolver la tarea completa T con todos sus campos", () => {
+        expect(gestor.crearTareaCompletaT("Tarea personal","revisar la lista mañana","2022-12-25","personal","importante","completada")).toEqual(
+            {"categoria": "personal", "completada": "completada", "descripcion": "revisar la lista mañana", "etiquetas": "importante", "fechaLimite": "2022-12-25", "id": 6, "titulo": "Tarea personal"});
+    });
 });
