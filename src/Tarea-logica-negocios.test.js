@@ -102,4 +102,9 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaCompletada("Tarea personal","revisar la lista mañana","2022-12-25","personal","importante","completada")).toEqual(
             {"categoria": "personal", "completada": "completada", "descripcion": "revisar la lista mañana", "etiquetas": "importante", "fechaLimite": "2022-12-25", "id": 7, "titulo": "Tarea personal"});
     });
+    it("Deberia devolver la tarea completada", () => {
+        expect(gestor.crearCategoria("Deporte")).toEqual(
+            true);
+            clearArray(listas.getListaCategorias());
+    });
 });
