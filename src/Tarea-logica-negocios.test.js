@@ -139,4 +139,8 @@ describe("Gestor Tareas", () => {
         expect(gestor.cambiarEstadoATareaCompletada(Tarea)).toEqual(
             true);
     });
+    it("Deberia devolver la variable que contiene el id + 1", () => {
+        expect(gestor.getID()).toEqual(
+            8);
+    });
 });
