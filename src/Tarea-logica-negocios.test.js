@@ -130,4 +130,13 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearDescripcion("Comprar víveres")).toEqual(
             "Comprar víveres");
     });
+    it("Deberia devolver la tarea con el estado completada", () => {
+        expect(gestor.cambiarEstadoATareaCompletada(Tarea)).toEqual(
+            Tarea);
+    });
+    it("Deberia devolver true si la tarea es indefinida", () => {
+        let Tarea = undefined;
+        expect(gestor.cambiarEstadoATareaCompletada(Tarea)).toEqual(
+            true);
+    });
 });
