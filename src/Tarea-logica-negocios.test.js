@@ -4,6 +4,14 @@ import * as listas from './Listas-logica-negocios.js';
 import * as validaciones from './Validaciones-logica-negocios.js';
 import { Tarea } from './Tarea-logica-negocios.js';
 
+function clearArray(array){
+    var i = array.length;
+    while(i > 0){
+        array.pop();
+        i--;
+    }
+}
+
 describe("Gestor Tareas", () => {
 
     it("Deberia devolver la tarea con el titulo", () => {
@@ -18,6 +26,13 @@ describe("Gestor Tareas", () => {
         expect(gestor.asignarDescipcionATarea(Tarea, "")).toEqual(
             Tarea);
     });
+    it("Deberia inicializar las listas", () => {
+        const expected = ['','trabajo','personal','familia','otros'];
+        expect(gestor.inicializarListas()).toEqual(
+            expect.arrayContaining(expected));
+            clearArray(listas.getListaCategorias());
+            clearArray(listas.getListaEtiquetas());
+    }); //Inicializar las listas se hara cuando se hagan las pruebas de la lista logica //Integracion
 
     it("Deberia devolver categoría invalida", () => {
         expect(gestor.asignarCategoriaATarea(Tarea, "")).toEqual(
