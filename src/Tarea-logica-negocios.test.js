@@ -143,4 +143,10 @@ describe("Gestor Tareas", () => {
         expect(gestor.getID()).toEqual(
             8);
     });
+    it("Deberia devolver la variable que contiene el id + 1", () => {
+        let tarea = new Tarea();
+        tarea.titulo = 'Don Quijote';
+        expect(tarea.mostrarTitulo()).toEqual(
+            'Don Quijote');
+    });
 });
