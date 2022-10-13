@@ -117,9 +117,17 @@ describe("Gestor Tareas", () => {
         expect(gestor.crearTareaCompletada("Tarea personal","revisar la lista mañana","2022-12-25","personal","importante","completada")).toEqual(
             {"categoria": "personal", "completada": "completada", "descripcion": "revisar la lista mañana", "etiquetas": "importante", "fechaLimite": "2022-12-25", "id": 7, "titulo": "Tarea personal"});
     });
-    it("Deberia devolver la tarea completada", () => {
+    it("Deberia añadir la categoría a la lista de categorías", () => {
         expect(gestor.crearCategoria("Deporte")).toEqual(
             true);
             clearArray(listas.getListaCategorias());
+    });
+    it("Deberia devolver el mensaje no descripcionado", () => {
+        expect(gestor.crearDescripcion("")).toEqual(
+            "No Descripcionado");
+    });
+    it("Deberia devolver la descripción enviada", () => {
+        expect(gestor.crearDescripcion("Comprar víveres")).toEqual(
+            "Comprar víveres");
     });
 });
