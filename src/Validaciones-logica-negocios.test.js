@@ -120,7 +120,7 @@ describe("Gestor Tareas Validaciones Verificar Fecha", () => {
     });
 });
 ////////////////////////////////
-describe("Gestor Tareas Validaciones", () => {
+describe("Gestor Tareas Validaciones verificar campo vacío", () => {
     it("Debería devolver n/a cuando un campo se envía vacío", () => {
         expect(validaciones.verificarCampoVacio(" ")).toEqual("n/a");
     });
@@ -131,5 +131,19 @@ describe("Gestor Tareas Validaciones", () => {
 
     it("Debería devolver n/a cuando un campo se envía vacío", () => {
         expect(validaciones.verificarCampoVacio(undefined)).toEqual("n/a");
+    });
+});
+
+describe("Gestor Tareas Validaciones validar titulo", () => {
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.validarTitulo(" ")).toEqual(false);
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.validarTitulo(null)).toEqual(false);
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.validarTitulo(undefined)).toEqual(false);
     });
 });
