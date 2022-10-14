@@ -147,3 +147,17 @@ describe("Gestor Tareas Validaciones validar titulo", () => {
         expect(validaciones.validarTitulo(undefined)).toEqual(false);
     });
 });
+
+describe("Gestor Tareas Validaciones verificar descripción", () => {
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarDescripcion(" ")).toEqual("n/a");
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarDescripcion(null)).toEqual("n/a");
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarDescripcion(undefined)).toEqual("n/a");
+    });
+});
