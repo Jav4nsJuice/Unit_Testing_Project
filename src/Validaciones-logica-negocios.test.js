@@ -119,3 +119,17 @@ describe("Gestor Tareas Validaciones Verificar Fecha", () => {
         expect(validaciones.validarFecha('2022-10-11')).toEqual(false);
     });
 });
+////////////////////////////////
+describe("Gestor Tareas Validaciones", () => {
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarCampoVacio(" ")).toEqual("n/a");
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarCampoVacio(null)).toEqual("n/a");
+    });
+
+    it("Debería devolver n/a cuando un campo se envía vacío", () => {
+        expect(validaciones.verificarCampoVacio(undefined)).toEqual("n/a");
+    });
+});
